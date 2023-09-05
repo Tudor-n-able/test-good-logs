@@ -74,7 +74,7 @@ public class Test {
         Test test = new Test();
         test.myFunc0();
 
-        LogManager.getLogManager().getLogger("LogManager").warning("Log message warn: orderstatus=" +
+        LogManager.getLogManager().getLogger("LogManager").warn("Log message warn: orderstatus=" +
                 test.orderstatus + ", errorcode=" + test.errorcode +
                 ", user=" + test.user + ", transactionId=" +
                 test.transactionId.toString());
