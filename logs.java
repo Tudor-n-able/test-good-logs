@@ -14,7 +14,7 @@ public class Test {
     private Long transactionId = 123L;
 
     void myFunc0() {
-        logger.info(String.format("Log message info: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}", orderstatus, errorcode, user, transactionId));
+        logger.info(String.format("Log message info: orderstatus={%s}, errorcode={%d}, transactionId={%d}", orderstatus, errorcode, user, transactionId));
     }
 
     void myFunc1() {
