@@ -14,12 +14,12 @@ public class Test {
     private Long transactionId = 123L;
 
     void myFunc0() {
-        logger.info(String.format("Log message info: orderstatus={%s}, errorcode={%d}, transactionId={%d}", orderstatus, errorcode, user, transactionId));
+        logger.info(String.format("Log message info: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}", orderstatus, errorcode, user, transactionId));
     }
 
     void myFunc1() {
         Logger localLogger = (Logger) LoggerFactory.getLogger(Slf4j.class);
-        localLogger.error(String.format("Log message error: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}",
+        localLogger.error(String.format("Log message error: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}",
                 orderstatus,
                 errorcode,
                 user,
@@ -29,7 +29,7 @@ public class Test {
         int a = 10;
 
         for(int i = 0; i < a; i++) {
-            log.warn(String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}", orderstatus, errorcode,
+            log.warning(String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}", orderstatus, errorcode,
                     user,
                     transactionId
             ));
@@ -39,7 +39,7 @@ public class Test {
                 .
                 getLogger().info(String.
                         format(
-                                "Log message info: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}",
+                                "Log message info: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}",
                                 orderstatus, errorcode,
                                 user, transactionId
                         )
@@ -49,8 +49,8 @@ public class Test {
     void myFunc2() {
         LoggerFactory
                 .getLogger(Slf4j.class)
-                .warn(
-                    String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}",
+                .warning(
+                    String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}",
                             orderstatus,
                             errorcode,
                             user,
@@ -58,7 +58,7 @@ public class Test {
                     ));
 
 
-        Logger.getLogger().info(String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionId={%d}",
+        Logger.getLogger().info(String.format("Log message warn: orderstatus={%s}, errorcode={%d}, user={%s}, transactionid={%d}",
                 orderstatus,
                 errorcode,
                 user,
@@ -67,16 +67,16 @@ public class Test {
     }
 
     void myFunc3() {
-        log.debug("Log message warn: orderstatus=" + orderstatus + ", errorcode=" + errorcode + ", user=" + user + ", transactionId=" + transactionId.toString());
+        log.debug("Log message warn: orderstatus=" + orderstatus + ", errorcode=" + errorcode + ", user=" + user + ", transactionid=" + transactionId.toString());
     }
 
     public static void main(String[] args) {
         Test test = new Test();
         test.myFunc0();
 
-        LogManager.getLogManager().getLogger("LogManager").warn("Log message warn: orderstatus=" +
+        LogManager.getLogManager().getLogger("LogManager").warning("Log message warn: orderstatus=" +
                 test.orderstatus + ", errorcode=" + test.errorcode +
-                ", user=" + test.user + ", transactionId=" +
+                ", user=" + test.user + ", transactionid=" +
                 test.transactionId.toString());
     }
 }
